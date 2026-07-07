@@ -15,10 +15,11 @@ function addNumber(num){
 
         toDisplay.textContent=`${num1}`;
     }
-    else if(!num1==null && operator==''){
+    else if(num1!=null && operator==''){
         num1 = String(num1)+ String(num);
         num1 =Number(num1);
 
+        console.log(num1);
         toDisplay.textContent=`${num1}`;
     }
     else if(num2==null){
@@ -45,6 +46,9 @@ function addOper(oper){
 
 function calculate(){
     if(operator=='+'){
+        num1=Number(num1);
+        num2=Number(num2);
+
         result =num1+num2;
     }
     else if(operator=='-'){
