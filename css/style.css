@@ -8,13 +8,10 @@
 
 
 .background{
-    background-color: #111;
+    background-color: #0d1b2b;
     width:100vw;
     height:100vh;
-}
 
-
-.continer{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +19,19 @@
 }
 
 
-.keys{
+.continer{
+   
     background-color:  rgb(37, 69, 119);
-     border: 2px solid #062951;
-     cursor: pointer;
+    border: 5px solid #0d1b2b;
+    padding:8px 15px;
+    padding-top: 45px;
+
+    border-radius: 15px;
+}
+
+
+.keys{
+    cursor: pointer;
 }
 
 
@@ -40,9 +46,10 @@
 
     border:none;
     margin:10px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 
+    border-radius: 12px;
     box-shadow: -3px -3px 10px #000;
 }
 
@@ -59,21 +66,22 @@
 
 
 .display{
+    margin: auto;
     background-color:rgb(12, 44, 75);
-    border: 2px solid #062951;
+    border: 5px solid #062951;
     color:white;
 
     margin-bottom: 20px;
-    margin-top: 80px;
 
     text-align: right;
     border-radius: 5px;
+    border: 3px solid #0d1b2b;
 
     padding:10px 20px;
-    font-size: 1.8rem;
+    font-size: 2rem;
 
     width:100%;
-    width: 420px;
+    width: 400px;
     height:80px;
 }
 

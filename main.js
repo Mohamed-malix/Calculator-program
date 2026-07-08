@@ -3,6 +3,7 @@ let num1 = null;
 let num2 = null;
 let result =0;
 let operator ='';
+let nextOper ='';
 
 let toDisplay =document.querySelector('.display')
 
@@ -33,6 +34,8 @@ function addNumber(num){
 
         toDisplay.textContent=`${num2}`;
     }
+
+    
 }
 
 
@@ -40,7 +43,24 @@ function addNumber(num){
 
 
 function addOper(oper){
-    operator =oper;
+
+    if(num1 != null && num2!= null && operator !=''){
+        num1 = calculate();
+        operator ='';
+        num2 =null;
+        result =0;
+
+        calculate();
+    }
+    else if(operator !='' && num2== null){
+        nextOper =oper;
+    }
+    else if( nextOper!=''){
+        operator=nextOper;
+    }
+    else{
+        operator =oper;
+    }
 }
 
 
@@ -57,8 +77,11 @@ function calculate(){
     else if(operator=='*'){
         result =num1*num2;
     }
-    else if(operator=='/'){
+    else if(operator=='/' && num2 !=0){
         result =num1/num2;
+    }
+    else if(operator=='/' && num2 ==0){
+        result ="You can't divide by zero !";
     }
 
 
@@ -74,6 +97,7 @@ del.addEventListener('click', (e) =>{
     num2=null;
     result = 0;
     operator='';
+    nextOper ='';
 
     toDisplay.textContent=`${result}`;
 })
