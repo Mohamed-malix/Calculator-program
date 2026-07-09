@@ -47,7 +47,7 @@ function addOper(oper){
 
     if(num1 != null && num2!= null && operator !=''){
         num1 =calculate();
-        toDisplay.textContent=`${num1}`;
+        // toDisplay.textContent=`${num1}`;
 
         num2 =null;
         result =0;
@@ -86,6 +86,7 @@ function calculate(){
         result ="Error : divide by zero";
     }
 
+    result =Math.round(result*1000)/1000;
 
     toDisplay.textContent=`${result}`;
     return result;
