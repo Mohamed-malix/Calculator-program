@@ -5,12 +5,14 @@ let result =0;
 let operator ='';
 let nextOper ='';
 
+
 let toDisplay =document.querySelector('.display')
 
 
 
 function addNumber(num){
 
+    
     if(num1==null){
         num1=num;
 
@@ -20,7 +22,6 @@ function addNumber(num){
         num1 = String(num1)+ String(num);
         num1 =Number(num1);
 
-        console.log(num1);
         toDisplay.textContent=`${num1}`;
     }
     else if(num2==null){
@@ -45,12 +46,13 @@ function addNumber(num){
 function addOper(oper){
 
     if(num1 != null && num2!= null && operator !=''){
-        num1 = calculate();
-        operator ='';
+        num1 =calculate();
+        toDisplay.textContent=`${num1}`;
+
         num2 =null;
         result =0;
-
-        calculate();
+        operator =oper;
+   
     }
     else if(operator !='' && num2== null){
         nextOper =oper;
@@ -81,11 +83,12 @@ function calculate(){
         result =num1/num2;
     }
     else if(operator=='/' && num2 ==0){
-        result ="You can't divide by zero !";
+        result ="Error : divide by zero";
     }
 
 
     toDisplay.textContent=`${result}`;
+    return result;
 
 }
 
