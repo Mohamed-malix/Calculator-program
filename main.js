@@ -10,6 +10,7 @@ let toDisplay =document.querySelector('.display')
 
 
 
+
 function addNumber(num){
 
     
@@ -19,7 +20,9 @@ function addNumber(num){
         toDisplay.textContent=`${num1}`;
     }
     else if(num1!=null && operator==''){
-        num1 = String(num1)+ String(num);
+
+        // to make to or more digits numbers
+        num1 = String(num1)+ String(num); 
         num1 =Number(num1);
 
         toDisplay.textContent=`${num1}`;
@@ -45,9 +48,9 @@ function addNumber(num){
 
 function addOper(oper){
 
+    // it make the calculation if when we make two operations
     if(num1 != null && num2!= null && operator !=''){
         num1 =calculate();
-        // toDisplay.textContent=`${num1}`;
 
         num2 =null;
         result =0;
@@ -57,13 +60,12 @@ function addOper(oper){
     else if(operator !='' && num2== null){
         nextOper =oper;
     }
-    else if( nextOper!=''){
-        operator=nextOper;
-    }
     else{
         operator =oper;
     }
 }
+
+
 
 
 function calculate(){
@@ -86,6 +88,7 @@ function calculate(){
         result ="Error : divide by zero";
     }
 
+    //Rounding up to the first three digits
     result =Math.round(result*1000)/1000;
 
     toDisplay.textContent=`${result}`;
@@ -101,7 +104,7 @@ del.addEventListener('click', (e) =>{
     num2=null;
     result = 0;
     operator='';
-    nextOper ='';
+    
 
     toDisplay.textContent=`${result}`;
 })
